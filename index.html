@@ -1,27 +1,40 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-<title>Para Pruebas</title>
+  <head>
+    <title>Notification Example</title>
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-<script src="lib/jquery.min.js"></script>
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Empty
+    }
 
+    // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
 
-</head>
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
 
-<h1>PARA PRUEBAS 2</h1>
-
-
-<body>
-
-
-
-	<script src="cordova.js"></script>
-	<script src="js/app.js"></script>
-	
-</body>
+    </script>
+  </head>
+  <body>
+    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+  </body>
 </html>
