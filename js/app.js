@@ -6,7 +6,18 @@
     //
     function onDeviceReady() {
 
-    	alert("Estoy listo");
+    	navigator.notification.alert(
+				'Hola notification',   
+				null,         
+			    'Mensaje',         
+			    'Cerrar'               
+			);
+
+
+    	alert("Hola desde alert");
+
+
+    	console.log("mostrando bienvenidas");
 
 
     	 if(verificarConexion())
@@ -28,26 +39,6 @@
 			);
 	    }
 
-
-
-        // Empty
-    }
-
-
-    // alert dialog dismissed
-        function alertDismissed() {
-            console.log("se mostro mensaje");
-        }
-
-    // Show a custom alertDismissed
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
     }
 
 
