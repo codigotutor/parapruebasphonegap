@@ -6,6 +6,8 @@
     //
     function onDeviceReady() {
 
+    	alert("Estoy listo");
+
 
     	 if(verificarConexion())
 		{	
