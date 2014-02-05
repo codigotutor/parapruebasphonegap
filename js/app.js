@@ -1,14 +1,13 @@
-// We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
-(function () {
+// Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
 
 
-    /* --------------------------------- Event Registration -------------------------------- */
-    //$(window).on('hashchange', route);
-
-    document.addEventListener('deviceready', function () {
-
-       
-	  if(verificarConexion())
+    	 if(verificarConexion())
 		{	
 				navigator.notification.alert(
 				'Hay Conexion.',   
@@ -28,8 +27,26 @@
 	    }
 
 
-    }, false);
 
+        // Empty
+    }
+
+
+    // alert dialog dismissed
+        function alertDismissed() {
+            console.log("se mostro mensaje");
+        }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
 
 
 
@@ -43,7 +60,3 @@
 		
 	    return true;
     }
-
-
-
-}());
