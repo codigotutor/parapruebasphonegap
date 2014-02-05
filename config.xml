@@ -20,7 +20,6 @@
     <icon src="icon.png" />
    
 
-    <uses-permission android:name="android.permission.SET_DEBUG_APP"></uses-permission>
 
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
